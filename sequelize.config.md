@@ -4,6 +4,8 @@
 
 ## Initial cofiguration
 
+<p> A guide to configure e execute migrations with sequelize </p>
+
 Install dependencies
 
 - `yarn add sequelize`

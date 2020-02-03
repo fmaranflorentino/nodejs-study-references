@@ -1,3 +1,9 @@
+<h1 align="center">
+  <img alt="Sequelize logo" width="400px" src="./assets/sequelize.png">
+</h1>
+
+##Initial cofiguration
+
 Install dependencies
 
 - `yarn add sequelize`

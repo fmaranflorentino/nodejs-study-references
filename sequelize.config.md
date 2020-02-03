@@ -2,9 +2,9 @@
   <img alt="Sequelize logo" width="400px" src="./assets/sequelize.png">
 </h1>
 
-## Initial cofiguration
-
 <p> A guide to configure e execute migrations with sequelize </p>
+
+## Initial cofiguration
 
 Install dependencies
 

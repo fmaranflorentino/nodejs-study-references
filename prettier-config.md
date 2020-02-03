@@ -2,9 +2,9 @@
   <img alt="Prettier logo" width="400px" src="./assets/prettier.png">
 </h1>
 
-## Initial configuration
-
 <p> A guide to configure prettier formatter </p>
+
+## Initial configuration
 
 Add the following dependencies:
 

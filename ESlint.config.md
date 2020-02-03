@@ -2,9 +2,9 @@
   <img alt="Eslint logo" width="400px" src="./assets/eslint.png">
 </h1>
 
-## Initial configuration
-
 <p> A guide to configure ESlint </p>
+
+## Initial configuration
 
 Install the following dependency:
 

@@ -4,6 +4,8 @@
 
 ## Initial configuration
 
+<p> A guide to configure prettier formatter </p>
+
 Add the following dependencies:
 
 - `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`

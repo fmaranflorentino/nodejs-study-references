@@ -32,7 +32,6 @@ Install other dependencies
 Modify/create config/database.js
 
 ```js
-
 module.exports = {
   dialect: 'postgres',
   host: 'localhost',
@@ -106,3 +105,73 @@ module.exports = {
 To run the migration run the command below:
 
 - `yarn sequelize db:migrate`
+
+
+## Creating a Model
+
+´´´js
+import Sequelize, { Model } from 'sequelize';
+
+class User extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        name: Sequelize.STRING,
+        email: Sequelize.STRING,
+        password_hash: Sequelize.STRING,
+        provider: Sequelize.BOOLEAN,
+      },
+      {
+        sequelize,
+      }
+    );
+  }
+}
+
+export default User;
+´´´
+
+## Connecting a model and insert example
+
+On database/ create a index.js
+
+´´´js
+import Sequelize from 'sequelize';
+
+import User from '../app/models/User';
+
+import databaseConfig from '../config/database';
+
+const models = [User];
+
+class Database {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.connection = new Sequelize(databaseConfig);
+
+    models.map(model => model.init(this.connection));
+  }
+}
+
+export default new Database();
+
+´´´
+
+On the app.js file import the database config
+
+´´´js
+import './database';
+´´´
+
+Below a example of connection
+
+´´´js
+const user = await User.create({
+    name: 'Flávio Florentino',
+    email: 'florentino.flavio@hotmail.com',
+    password_hash: '348927472',
+});
+´´´

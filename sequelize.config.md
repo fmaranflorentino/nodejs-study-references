@@ -109,7 +109,7 @@ To run the migration run the command below:
 
 ## Creating a Model
 
-´´´js
+```js
 import Sequelize, { Model } from 'sequelize';
 
 class User extends Model {
@@ -129,13 +129,13 @@ class User extends Model {
 }
 
 export default User;
-´´´
+```
 
 ## Connecting a model and insert example
 
 On database/ create a index.js
 
-´´´js
+```js
 import Sequelize from 'sequelize';
 
 import User from '../app/models/User';
@@ -158,20 +158,20 @@ class Database {
 
 export default new Database();
 
-´´´
+```
 
 On the app.js file import the database config
 
-´´´js
+```js
 import './database';
-´´´
+```
 
 Below a example of connection
 
-´´´js
+```js
 const user = await User.create({
     name: 'Flávio Florentino',
     email: 'florentino.flavio@hotmail.com',
     password_hash: '348927472',
 });
-´´´
+```

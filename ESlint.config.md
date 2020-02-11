@@ -12,7 +12,7 @@ Install the following dependency:
 
 Run the following command:
 
-- `yarn eslint init`
+- `yarn eslint --init`
 
 The file .eslintrc.js will be generated
 

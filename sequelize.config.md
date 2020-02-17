@@ -227,10 +227,15 @@ class User extends Model {
 export default User;
 ```
 
-<p>And now we want to add a new relationship, we want to add a reference to the user photo. <br>
-In our User schema we need to add a static method named associate(). This method will receive the model of association, and a foreignKey you can provide a alias also.
+<p>And now we want to add a new relationship, we want to add a reference to the user photo.
+
 </p>
 
+<p>
+In our User schema we need to add a static method named associate().</p>
+<p>
+ This method will receive the model of association, and a foreignKey you can provide a alias also.
+</p>
 <p>See the example bellow:</p>
 
 ```js

@@ -175,3 +175,33 @@ const user = await User.create({
     password_hash: '348927472',
 });
 ```
+
+### Adding a new column to a existing table
+
+<p>First you need to create another migration, follow the example below:</p>
+
+- `yarn sequelize migration:create --name=add-img-to-user`
+
+<p>
+After that, you need to cofigure your new migration, follow the configuration below:
+</p>
+
+```js
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.addColumn('TABLE_NAME', 'NEW_COLUMN_NAME', {
+      type: Sequelize.INTEGER,
+      references: { model: 'MODEL_TO_BE_REFERENCED', key: 'id' },
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL',
+      allowNull: true,
+    });
+  },
+
+  down: queryInterface => {
+    return queryInterface.removeColumn('TABLE_NAME', 'NEW_COLUMN_NAME');
+  },
+};
+```

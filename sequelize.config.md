@@ -269,3 +269,26 @@ class User extends Model {
 
 export default User;
 ```
+
+### Selecting data between dates
+
+<p>To execute queries and select data with a 'between' comparation, you need first to import the operator below:</p>
+
+```js
+import { Op } from "sequelize";
+```
+
+<p>Using the example below, we can see in code how to query information:</p>
+
+```js
+import { startOfDay, endOfDay, parseISO } from 'date-fns';
+
+const appointments = await Appointment.findAll({
+  where: {
+    date: {
+      [Op.between]: [startOfDay(parsedDate), endOfDay(parsedDate)]
+    }
+  },
+  order: ["date"]
+});
+```
